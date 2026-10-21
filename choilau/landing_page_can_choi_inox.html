@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Cán Chổi Inox Siêu Dày Dài 3 Mét Đa Năng</title>
+    <meta name="description" content="Cán chổi inox siêu dày dài 3 mét, có thể rút ngắn hoặc kéo dài, dùng lau tường, trần nhà, ô tô và nhiều bề mặt.">
+    <style>
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth;scroll-padding-top:62px}
+        body{margin:0;background:#f2f2f2;color:#222;font-family:Arial,Helvetica,sans-serif}
+        button,input,textarea{font:inherit}
+        a{text-decoration:none;color:inherit}
+        .site{max-width:760px;margin:auto;background:#fff;min-height:100vh;box-shadow:0 0 25px rgba(0,0,0,.07)}
+        .header{position:sticky;top:0;z-index:50;height:56px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 11px;border-bottom:1px solid #ddd}
+        .header-title{font-size:14px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .header-buy{background:#ff3d22;color:#fff;border:0;border-radius:9px;padding:10px 15px;font-weight:900;font-size:13px;white-space:nowrap;animation:buyPulse 1.8s ease-in-out infinite}
+        .gallery{height:430px;position:relative;overflow:hidden;background:#fff;touch-action:pan-y;user-select:none}
+        .track{height:100%;display:flex;transition:transform .45s ease}
+        .slide{min-width:100%;height:100%;flex:0 0 100%;display:flex;align-items:center;justify-content:center;background:#fff}
+        .slide img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none}
+        .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:36px;height:36px;border:0;border-radius:50%;background:rgba(0,0,0,.35);color:#fff;font-size:25px;cursor:pointer}
+        .prev{left:9px}.next{right:9px}
+        .dots{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;gap:5px;background:rgba(0,0,0,.3);padding:5px 8px;border-radius:20px}
+        .dot{width:7px;height:7px;border:0;border-radius:50%;background:#ddd;padding:0}.dot.active{width:18px;border-radius:6px;background:#fff}
+        .count{position:absolute;right:0;bottom:9px;background:rgba(0,0,0,.58);color:#fff;padding:5px 10px;border-radius:15px 0 0 15px;font-size:11px;font-weight:800}
+        .hero{padding:12px 13px 9px}
+        .hero h1{font-size:20px;line-height:1.4;margin:0 0 7px}
+        .rating{display:flex;align-items:center;gap:7px;font-size:12px}.rating b{font-size:16px}.stars{color:#ffb900;letter-spacing:1px;font-size:16px}
+        .deal{margin-top:11px;background:linear-gradient(105deg,#ff3154,#ff5a21);color:#fff;padding:11px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px;overflow:hidden}
+        .price-label{font-size:11px;font-weight:800}.price{display:inline-block;font-size:31px;font-weight:950;line-height:1.05;margin-top:2px;animation:pricePulse 1.65s ease-in-out infinite}
+        .old{display:block;font-size:11px;opacity:.8;margin-top:4px}.deal-right{text-align:center;min-width:145px}.urgency{font-size:11px;font-weight:900}.timer{display:flex;justify-content:center;align-items:center;gap:3px;margin-top:5px;font-weight:900}.timer span{font-size:19px;min-width:20px}.timer b{font-size:15px}
+        .quick-points{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:10px 12px;border-bottom:7px solid #f3f3f3}
+        .quick{border:1px solid #eee;border-radius:9px;padding:9px 5px;text-align:center;font-size:10px;line-height:1.35}.quick strong{display:block;font-size:20px;margin-bottom:3px}
+        .order-box{margin:13px 12px;padding:14px;background:#f3f4f5;border-radius:13px}
+        .order-title{text-align:center}.order-title h2{margin:2px 0 5px;font-size:19px}.order-title p{margin:0 0 12px;font-size:12px;color:#ef3152}
+        .packages{display:grid;gap:7px;margin-bottom:11px}
+        .pkg{position:relative;border:1.5px solid #ddd;border-radius:9px;background:#fff;padding:10px 10px;cursor:pointer;display:flex;align-items:center;gap:8px}
+        .pkg.selected{border-color:#ff3154;background:#fff6f7;box-shadow:0 0 0 1px #ff3154}
+        .pkg input{accent-color:#ff3154}
+        .pkg-main{flex:1}.pkg-main b{display:block;font-size:14px}.pkg-main small{display:block;color:#777;font-size:11px;margin-top:3px}
+        .pkg-price{font-size:14px;color:#ff3154;font-weight:900;text-align:right}.pkg-price small{display:block;color:#777;font-weight:500;font-size:10px}
+        .field{width:100%;border:1px solid #ddd;border-radius:8px;background:#fff;padding:13px 11px;margin-bottom:9px;outline:0}
+        .field:focus{border-color:#ff3154;box-shadow:0 0 0 2px #ff31541a}
+        .submit{width:100%;border:0;border-radius:10px;background:#ff3154;color:#fff;padding:16px 10px;font-size:20px;font-weight:950;cursor:pointer;animation:buyPulse 1.55s ease-in-out infinite;box-shadow:0 4px 0 #c81738}
+        .note{text-align:center;color:#777;font-size:10px;line-height:1.45;margin:9px 0 0}
+        .section{padding:15px 12px}.section h2{text-align:center;font-size:19px;margin:4px 0 13px}
+        .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+        .feature{border:1px solid #eee;border-radius:11px;padding:12px;background:#fff}
+        .feature .ico{font-size:25px}.feature b{display:block;font-size:14px;margin-top:5px}.feature p{font-size:11px;color:#666;line-height:1.45;margin:5px 0 0}
+        .info{background:#fff8ec;border-radius:12px;padding:13px;margin-top:11px}
+        .info p{font-size:13px;line-height:1.55;margin:5px 0}.info ul{padding-left:20px;margin:8px 0}.info li{font-size:13px;line-height:1.55;margin-bottom:5px}
+        .images img{width:100%;display:block;border-radius:10px;margin:9px 0}
+        /* Customer review section: responsive image sizing fix */
+        .tea-reviews{border-top:8px solid #f3f3f3;padding:15px 12px 20px;background:#fff;overflow:hidden}
+        .tea-reviews h2{text-align:center;font-size:19px;line-height:1.4;margin:4px 0 13px}
+        .tea-review-summary{text-align:center;border-bottom:1px solid #eee;padding:0 0 12px;display:flex;flex-direction:column;align-items:center;gap:3px}
+        .tea-review-summary strong{font-size:23px;line-height:1.2}
+        .tea-review-summary small{font-size:11px;color:#777}
+        .tea-review{padding:13px 0;border-bottom:1px solid #eee;min-width:0;overflow:hidden}
+        .tea-review-user{display:flex;align-items:center;gap:8px;min-width:0}
+        .tea-review-user>div{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
+        .tea-review-user b{font-size:13px;line-height:1.35}
+        .tea-review-user small{font-size:10px;color:#009b63;line-height:1.35}
+        .tea-review-avatar{width:38px;height:38px;min-width:38px;flex:0 0 38px;border-radius:50%;display:grid;place-items:center;background:#222;color:#fff;font-weight:900;font-size:14px}
+        .tea-review p{font-size:13px;line-height:1.5;margin:8px 0;overflow-wrap:anywhere}
+        .tea-review .stars{display:inline-block;color:#ffb900;letter-spacing:1px;font-size:14px;line-height:1.2}
+        .tea-review img{display:block;width:auto!important;height:auto!important;max-width:100%;max-height:300px;object-fit:contain;object-position:left center;border-radius:8px;margin:8px 0 0;border:1px solid #eee}
+        .tea-shop-proof{margin-top:13px;padding:12px;background:#f7faf5;border:1px solid #e4eadf;border-radius:9px;font-size:12px;line-height:1.5;color:#555}
+        .tea-shop-proof b{color:#227548}
+        @media(max-width:390px){.tea-reviews{padding-left:10px;padding-right:10px}.tea-review img{max-height:240px}}
+        .reviews{border-top:8px solid #f3f3f3;padding:15px 12px 20px}.review-summary{text-align:center;border-bottom:1px solid #eee;padding-bottom:12px}.review-summary strong{font-size:23px}.review{padding:13px 0;border-bottom:1px solid #eee}.review-user{display:flex;align-items:center;gap:8px}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#222;color:#fff;font-weight:900}.review-user b{font-size:13px}.review p{font-size:13px;line-height:1.5;margin:8px 0}.verified{color:#009b63;font-size:10px}
+        .review-buy{display:flex;align-items:center;justify-content:center;width:96%;margin:13px auto 3px;padding:14px 18px;background:linear-gradient(135deg,#ff4d00,#ff1f00);color:#fff;border-radius:10px;font-size:18px;font-weight:900;animation:reviewPulse 1.8s ease-in-out infinite;box-shadow:0 5px 15px #ff3c002d}
+        .shop{background:#f7faf5;margin-top:12px;padding:15px 13px;border-top:1px solid #e4eadf;border-bottom:1px solid #e4eadf}.shop b{font-size:16px}.shop p{font-size:12px;color:#666;line-height:1.5}
+        .final{background:#fff2f3;text-align:center;padding:24px 13px 84px}.final h2{margin:0 0 7px;font-size:20px}.final p{color:#666}.final strong{color:#ff3154;font-size:27px}.final a{display:block;max-width:420px;margin:13px auto 0;padding:16px;background:#ff3154;color:#fff;border-radius:10px;font-size:19px;font-weight:950;animation:buyPulse 1.55s infinite}
+        .bottom{position:fixed;z-index:100;bottom:0;left:50%;transform:translateX(-50%);width:min(760px,100%);background:#fff;border-top:1px solid #ddd;padding:7px 9px calc(7px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1.55fr;gap:7px}.bottom a{display:flex;align-items:center;justify-content:center;border-radius:8px;font-weight:900;font-size:14px;padding:12px}.bottom .price-mini{border:1px solid #ff3154;color:#ff3154}.bottom .buy-mini{background:#ff3154;color:#fff;animation:buyPulse 1.55s infinite}
+        .success{position:fixed;inset:0;background:rgba(247,252,248,.97);z-index:999;display:none;align-items:center;justify-content:center;padding:20px}.success.show{display:flex}.success-card{text-align:center;max-width:500px}.success-icon{width:76px;height:76px;border-radius:50%;background:#e3f4e9;color:#1c664a;display:grid;place-items:center;font-size:47px;margin:auto auto 20px}.success h2{font-size:27px;color:#195940;margin:0 0 10px}.success p{color:#737a76;line-height:1.55;font-size:14px}.success button{width:100%;border:0;border-radius:12px;background:#d18a24;color:#fff;padding:15px;font-weight:900;margin-top:10px}
+        @keyframes pricePulse{0%,100%{transform:scale(1)}45%{transform:scale(1.065)}60%{transform:scale(1.025)}}
+        @keyframes buyPulse{0%,100%{transform:scale(1);box-shadow:0 4px 0 rgba(174,0,38,.2)}50%{transform:scale(1.035);box-shadow:0 5px 0 rgba(174,0,38,.15),0 0 0 7px rgba(255,49,86,.09)}}
+        @keyframes reviewPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+        @media(max-width:390px){.gallery{height:360px}.hero h1{font-size:18px}.price{font-size:27px}.deal-right{min-width:132px}.timer span{font-size:17px}.quick strong{font-size:18px}.feature-grid{gap:7px}}
+        @media(prefers-reduced-motion:reduce){.price,.submit,.header-buy,.final a,.bottom .buy-mini,.review-buy{animation:none}}
+    </style>
+<!-- Meta Pixel Code - copied from index -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2128053304586450');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {
+  content_name: 'Cán chổi inox siêu dày dài 3 mét',
+  content_type: 'product',
+  content_ids: ['can-choi-inox-dai-3-met'],
+  value: 199000,
+  currency: 'VND'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2128053304586450&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+    <div class="site">
+        <header class="header">
+            <div class="header-title">🧹 CÁN CHỔI INOX DÀI 3 MÉT</div>
+            <button class="header-buy" type="button" onclick="scrollToOrder()">🛒 MUA NGAY</button>
+        </header>
+
+        <section class="gallery" id="gallery">
+            <div class="track" id="track">
+                <div class="slide"><img src="kepga_assets/vflip1.webp" alt="Cán chổi inox siêu dày dài 3 mét"></div>
+                <div class="slide"><img src="kepga_assets/vflip2.webp" alt="Cán chổi inox dùng lau tường và trần nhà"></div>
+                <div class="slide"><img src="kepga_assets/vflip3.webp" alt="Cán chổi inox đa năng lau nhà và ô tô"></div>
+            </div>
+            <button class="arrow prev" id="prev" aria-label="Ảnh trước">‹</button>
+            <button class="arrow next" id="next" aria-label="Ảnh tiếp">›</button>
+            <div class="dots" id="dots"></div>
+            <div class="count" id="count">1/3</div>
+        </section>
+
+        <section class="hero">
+            <h1>🌺 Cán Chổi Inox Siêu Dày 3 Mét – Lau Tường, Trần Nhà, Ô Tô Đa Năng</h1>
+            <div class="rating"><b>4.9/5</b><span class="stars">★★★★★</span><span>Khách hàng đã mua</span></div>
+            <div class="deal">
+                <div>
+                    <div class="price-label">🔥 GIÁ XẢ KHO</div>
+                    <div class="price">199.000đ</div>
+                    <span class="old">1 bộ gồm 1 cán cây + 1 bông lau · Miễn phí ship</span>
+                </div>
+                <div class="deal-right">
+                    <div class="urgency">⏰ ƯU ĐÃI CÒN LẠI</div>
+                    <div class="timer"><span id="mm">29</span><b>:</b><span id="ss">59</span></div>
+                    <div style="font-size:10px;margin-top:3px">Phút : Giây</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-points">
+            <div class="quick"><strong>🧹</strong><b>Lau đa năng</b><br>Tường, trần, ô tô</div>
+            <div class="quick"><strong>💪</strong><b>Inox siêu dày</b><br>Cứng cáp, chắc chắn</div>
+            <div class="quick"><strong>↕️</strong><b>Dài đến 3 mét</b><br>Rút ngắn/kéo dài</div>
+        </section>
+
+        <section class="order-box" id="dat-hang">
+            <div class="order-title">
+                <h2>🛒 ĐẶT HÀNG NGAY</h2>
+                <p>Miễn phí vận chuyển · Nhận hàng kiểm tra rồi thanh toán</p>
+            </div>
+
+            <div class="packages" id="packages">
+                <label class="pkg selected">
+                    <input type="radio" name="package" value="1" data-price="199000" data-shipping="0" checked>
+                    <span class="pkg-main"><b>1 Bộ ( 1 cán cây + 1 bông lau )</b><small>Miễn phí vận chuyển</small></span>
+                    <span class="pkg-price">199.000đ<small>FREE SHIP</small></span>
+                </label>
+                <label class="pkg">
+                    <input type="radio" name="package" value="2" data-price="349000" data-shipping="0">
+                    <span class="pkg-main"><b>2 Bộ ( 2 cán cây + 2 bông lau )</b><small>Tiết kiệm 50.000đ · Miễn phí vận chuyển</small></span>
+                    <span class="pkg-price">349.000đ<small>FREE SHIP</small></span>
+                </label>
+            </div>
+
+            <div id="orderSummary" style="background:#fff;border-radius:8px;padding:10px;margin-bottom:10px;font-size:12px;line-height:1.55">
+                <b>Đơn hàng:</b> <span id="summaryPackage">1 bộ – 1 cán + 1 bông lau</span><br>
+                <span>Tiền hàng: </span><b id="summaryPrice">199.000đ</b> ·
+                <span>Phí ship: </span><b id="summaryShip">0đ</b><br>
+                <span>Tổng thanh toán: </span><b id="summaryTotal" style="color:#ff3154;font-size:16px">199.000đ</b>
+            </div>
+
+            <form id="orderForm">
+                <input class="field" id="name" type="text" placeholder="Họ và tên *" autocomplete="name">
+                <input class="field" id="phone" type="tel" inputmode="numeric" placeholder="Số điện thoại *" autocomplete="tel">
+                <textarea class="field" id="address" rows="3" placeholder="Địa chỉ nhận hàng (thôn/xóm, xã/phường, huyện/quận, tỉnh/thành) *" autocomplete="street-address"></textarea>
+                <button class="submit" id="submitOrderBtn" type="submit">🛒 ĐẶT HÀNG NGAY</button>
+            </form>
+            <p class="note">🔒 Không cần thanh toán trước · Nhận hàng kiểm tra rồi thanh toán · Thông tin được dùng để giao hàng</p>
+        </section>
+
+        <section class="section">
+            <h2>✨ ƯU ĐIỂM CỦA CÁN CHỔI INOX ĐA NĂNG</h2>
+            <div class="feature-grid">
+                <article class="feature">
+                    <div class="ico">🧹</div><b>Lau nhiều vị trí</b>
+                    <p>Dùng lau tường nhà, trần nhà, ô tô và nhiều khu vực khác.</p>
+                </article>
+                <article class="feature">
+                    <div class="ico">↕️</div><b>Kéo dài đến 3 mét</b>
+                    <p>Có thể rút ngắn hoặc kéo dài tùy theo nhu cầu sử dụng.</p>
+                </article>
+                <article class="feature">
+                    <div class="ico">💪</div><b>Cán inox siêu dày</b>
+                    <p>Thiết kế cứng cáp, chắc chắn theo thông tin sản phẩm.</p>
+                </article>
+                <article class="feature">
+                    <div class="ico">📦</div><b>Bộ sản phẩm tiện lợi</b>
+                    <p>Mỗi bộ gồm 1 cán cây và 1 bông lau.</p>
+                </article>
+            </div>
+
+            <div class="info">
+                <p><b>📌 THÔNG TIN SẢN PHẨM</b></p>
+                <ul>
+                    <li>Bộ sản phẩm gồm 1 cán cây + 1 bông lau.</li>
+                    <li>Cán chổi inox siêu dày, thiết kế cứng cáp.</li>
+                    <li>Chiều dài tối đa 3 mét; có thể rút ngắn hoặc kéo dài tùy nhu cầu.</li>
+                    <li>Ứng dụng: lau tường nhà, trần nhà, lau xe ô tô và lau dọn đa năng.</li>
+                    <li>Hỗ trợ nhận hàng kiểm tra trước khi thanh toán.</li>
+                    <li>Giá 1 bộ 199.000đ, 2 bộ 349.000đ; miễn phí vận chuyển.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section images">
+            <h2>🧹 CÁN CHỔI INOX LAU DỌN ĐA NĂNG</h2>
+            <img src="kepga_assets/vflip1.webp" alt="Cán chổi inox siêu dày dài 3 mét">
+            <img src="kepga_assets/vflip2.webp" alt="Cán chổi inox lau tường và trần nhà">
+            <img src="kepga_assets/vflip3.webp" alt="Bông lau dùng cùng cán chổi inox">
+        </section>
+
+        <section class="tea-reviews" id="danh-gia">
+                <h2>⭐ Thông tin và phản hồi sản phẩm</h2>
+                <div class="tea-review-summary"><strong>4.9/5</strong><span class="stars">★★★★★</span><small>Khách hàng đã mua</small></div>
+                <div id="teaReviewList">
+                    <article class="tea-review">
+                        <div class="tea-review-user"><span class="tea-review-avatar">A</span>
+                            <div><b>Anh A.</b><small>✓ Khách hàng đã mua</small><span class="stars">★★★★★</span></div>
+                        </div>
+                        <p>Sản phấn cứng cáp, vừa tầm sử dụng, bông lau phù hợp, mình thấy rất ưng ý, lau dễ dàng, lau tường sạch lắm nha, dễ giặt sạch, dễ sử dụng nữa..</p><img alt="Ảnh khách hàng feedback" loading="lazy" src="f2.webp" />
+                    </article>
+                    <article class="tea-review">
+                        <div class="tea-review-user"><span class="tea-review-avatar">H</span>
+                            <div><b>Chị H.</b><small>✓ Khách hàng đã mua</small><span class="stars">★★★★★</span></div>
+                        </div>
+                        <p>Cây lau nhà rất ok nha chất chắn và tiện dụng,sẽ quay lại ủng hộ shop khi có nhu cầu</p><img alt="Ảnh khách hàng feedback" loading="lazy" src="f1.webp" />
+                    </article>
+                    <article class="tea-review">
+                        <div class="tea-review-user"><span class="tea-review-avatar">M</span>
+                            <div><b>Anh M.</b><small>✓ Khách hàng đã mua</small><span class="stars">★★★★★</span></div>
+                        </div>
+                        <p>Giao hàng nhanh, đúng mẫu.. Cứng cáp chất lượng.</p><img alt="Ảnh khách hàng feedback" loading="lazy" src="f3.webp" />
+                    </article>
+                    <article class="tea-review">
+                        <div class="tea-review-user"><span class="tea-review-avatar">T</span>
+                            <div><b>Chị T.</b><small>✓ Khách hàng đã mua</small><span class="stars">★★★★★</span></div>
+                        </div>
+                        <p>Cây lau cán inox chắc chắn rất dài dễ lau,gói hàng cẩn thận
+</p><img alt="Ảnh khách hàng feedback" loading="lazy" src="f4.webp" />
+                    </article>
+                    <article class="tea-review">
+                        <div class="tea-review-user"><span class="tea-review-avatar">N</span>
+                            <div><b>Anh N.</b><small>✓ Khách hàng đã mua</small><span class="stars">★★★★★</span></div>
+                        </div>
+                        <p>Cán dài hỗ trợ lau những vị trí cao, khó với tới.
+</p><img alt="Ảnh khách hàng feedback" loading="lazy" src="f5.webp" />
+                    </article>
+                    <article class="tea-review">
+                        <div class="tea-review-user"><span class="tea-review-avatar">L</span>
+                            <div><b>Chị L.</b><small>✓ Khách hàng đã mua</small><span class="stars">★★★★★</span></div>
+                        </div>
+                        <p>Sản phẩm đa năng, dùng lau tường và các vị trí trong nhà.
+</p><img alt="Ảnh khách hàng feedback" loading="lazy" src="f6.webp" />
+                    </article>
+                </div>
+                <div class="tea-shop-proof"><b>✓ Nhiều khách hàng đang quan tâm sản phẩm</b><br />Feedback thật có thể cập nhật thêm tại đây.</div>
+            </section>
+
+        <section class="final">
+            <h2>🔥 GIÁ ƯU ĐÃI TỪ 199.000đ / BỘ</h2>
+            <p>1 bộ 199K · 2 bộ chỉ 349K · <b>Miễn phí vận chuyển</b></p>
+            <a href="#dat-hang">🛒 ĐẶT MUA NGAY</a>
+        </section>
+    </div>
+
+    <div class="bottom">
+        <a href="#dat-hang" class="price-mini">Từ 199K/bộ</a>
+        <a href="#dat-hang" class="buy-mini">🛒 ĐẶT HÀNG NGAY</a>
+    </div>
+
+    <div class="success" id="successOverlay" aria-hidden="true">
+        <div class="success-card">
+            <div class="success-icon">✓</div>
+            <h2>Đặt hàng thành công!</h2>
+            <p>Cảm ơn bạn. Đơn hàng đã được tiếp nhận. Shop sẽ giao hàng trong thời gian sớm nhất.</p>
+            <button type="button" id="continueBtn">Tiếp tục xem sản phẩm</button>
+        </div>
+    </div>
+
+    <script>
+        const IMG1 = "kepga_assets/vflip1.webp",
+            IMG2 = "kepga_assets/vflip2.webp",
+            IMG3 = "kepga_assets/vflip3.webp";
+        let current = 0,
+            startX = 0;
+        const track = document.getElementById('track'),
+            slides = [...document.querySelectorAll('.slide')],
+            dots = document.getElementById('dots'),
+            count = document.getElementById('count');
+        slides.forEach((_, i) => {
+            const b = document.createElement('button');
+            b.className = 'dot' + (i === 0 ? ' active' : '');
+            b.onclick = () => go(i, true);
+            dots.appendChild(b)
+        });
+
+        function go(i, animate = true) {
+            current = (i + slides.length) % slides.length;
+            track.style.transition = animate ? 'transform .45s ease' : 'none';
+            track.style.transform = 'translateX(' + (-current * 100) + '%)';
+            document.querySelectorAll('.dot').forEach((d, n) => d.classList.toggle('active', n === current));
+            count.textContent = (current + 1) + '/' + slides.length
+        }
+        document.getElementById('next').onclick = () => {
+            go(current + 1);
+            restartAuto()
+        };
+        document.getElementById('prev').onclick = () => {
+            go(current - 1);
+            restartAuto()
+        };
+        const gallery = document.getElementById('gallery');
+        gallery.addEventListener('touchstart', e => startX = e.touches[0].clientX, {
+            passive: true
+        });
+        gallery.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 40) go(dx < 0 ? current + 1 : current - 1);
+            restartAuto()
+        }, {
+            passive: true
+        });
+        let auto = setInterval(() => go(current + 1), 4000);
+
+        function restartAuto() {
+            clearInterval(auto);
+            auto = setInterval(() => go(current + 1), 4000)
+        }
+
+        let endAt = Date.now() + 29 * 60 * 1000;
+
+        function timerTick() {
+            let left = Math.max(0, endAt - Date.now()),
+                sec = Math.floor(left / 1000),
+                m = Math.floor(sec / 60),
+                s = sec % 60;
+            document.getElementById('mm').textContent = String(m).padStart(2, '0');
+            document.getElementById('ss').textContent = String(s).padStart(2, '0');
+            if (left <= 0) endAt = Date.now() + 29 * 60 * 1000
+        }
+        setInterval(timerTick, 250);
+        timerTick();
+
+        function scrollToOrder() {
+            document.getElementById('dat-hang').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            })
+        }
+        document.querySelectorAll('.pkg').forEach(label => {
+            const radio = label.querySelector('input');
+            label.addEventListener('click', () => {
+                document.querySelectorAll('.pkg').forEach(x => x.classList.remove('selected'));
+                label.classList.add('selected');
+                radio.checked = true;
+                updateSummary()
+            })
+        });
+
+        function money(n) {
+            return Number(n).toLocaleString('vi-VN') + 'đ'
+        }
+
+        function updateSummary() {
+            const r = document.querySelector('input[name="package"]:checked');
+            if (!r) return;
+            const price = +r.dataset.price,
+                ship = +r.dataset.shipping,
+                n = +r.value;
+            document.getElementById('summaryPackage').textContent = n + ' bộ – ' + (n * 4) + ' chiếc';
+            document.getElementById('summaryPrice').textContent = money(price);
+            document.getElementById('summaryShip').textContent = ship ? money(ship) : 'Miễn phí';
+            document.getElementById('summaryTotal').textContent = money(price + ship);
+        }
+        updateSummary();
+
+        const API_URL = "https://script.google.com/macros/s/AKfycbwGYaRJSAjmxNXQEs2dmpKGJkdd2P7TuP8ateEQvxtWBqONFXx74i5jqjiX1r2e9z33/exec";
+
+        function validPhone(v) {
+            return /^(0)(3|5|7|8|9)[0-9]{8}$/.test(String(v).replace(/\s+/g, '').replace(/^\+84/, '0'))
+        }
+
+        function submitToSheet(data) {
+            return new Promise((resolve, reject) => {
+                const iframe = document.createElement('iframe');
+                iframe.name = 'orderFrame_' + Date.now();
+                iframe.style.cssText = 'position:fixed;width:1px;height:1px;left:-9999px;opacity:0;border:0';
+                document.body.appendChild(iframe);
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = API_URL;
+                form.target = iframe.name;
+                form.style.display = 'none';
+                Object.entries(data).forEach(([k, v]) => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = k;
+                    input.value = v == null ? '' : v;
+                    form.appendChild(input)
+                });
+                document.body.appendChild(form);
+                let done = false;
+                const cleanup = () => {
+                    if (form.parentNode) form.remove();
+                    if (iframe.parentNode) iframe.remove()
+                };
+                iframe.onload = () => {
+                    if (done) return;
+                    done = true;
+                    setTimeout(() => {
+                        cleanup();
+                        resolve()
+                    }, 500)
+                };
+                setTimeout(() => {
+                    if (done) return;
+                    done = true;
+                    cleanup();
+                    reject(new Error('Máy chủ phản hồi quá lâu. Vui lòng thử lại.'))
+                }, 20000);
+                form.submit();
+            });
+        }
+        document.getElementById('orderForm').addEventListener('submit', async e => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim(),
+                phone = document.getElementById('phone').value.trim(),
+                address = document.getElementById('address').value.trim(),
+                btn = document.getElementById('submitOrderBtn'),
+                r = document.querySelector('input[name="package"]:checked');
+            if (!name) {
+                alert('Vui lòng nhập họ tên.');
+                document.getElementById('name').focus();
+                return
+            }
+            if (!phone) {
+                alert('Vui lòng nhập số điện thoại.');
+                document.getElementById('phone').focus();
+                return
+            }
+            if (!validPhone(phone)) {
+                alert('Số điện thoại không hợp lệ. Vui lòng kiểm tra lại.');
+                document.getElementById('phone').focus();
+                return
+            }
+            if (!address) {
+                alert('Vui lòng nhập địa chỉ nhận hàng.');
+                document.getElementById('address').focus();
+                return
+            }
+            const price = +r.dataset.price,
+                ship = +r.dataset.shipping,
+                n = +r.value;
+            btn.disabled = true;
+            btn.textContent = '⏳ ĐANG GỬI ĐƠN...';
+            const params = new URLSearchParams(location.search);
+            const order = {
+                name,
+                phone,
+                address,
+                product: 'Cán chổi inox siêu dày dài 3 mét',
+                weight: n + ' bộ (mỗi bộ gồm 1 cán cây + 1 bông lau)',
+                quantity: 1,
+                unitPrice: price,
+                shippingFee: ship,
+                total: price + ship,
+                source: params.get('utm_source') || '',
+                medium: params.get('utm_medium') || '',
+                campaign: params.get('utm_campaign') || '',
+                content: params.get('utm_content') || '',
+                pageUrl: location.href
+            };
+            try {
+                await submitToSheet(order);
+                if (typeof window.trackKepgaLead === 'function') window.trackKepgaLead();
+                document.getElementById('successOverlay').classList.add('show');
+                document.getElementById('successOverlay').setAttribute('aria-hidden', 'false');
+                e.target.reset();
+                document.querySelector('.pkg').click();
+                updateSummary();
+            } catch (err) {
+                alert(err.message || 'Không thể gửi đơn hàng. Vui lòng thử lại.')
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🛒 ĐẶT HÀNG NGAY'
+            }
+        });
+        document.getElementById('continueBtn').onclick = () => {
+            document.getElementById('successOverlay').classList.remove('show');
+            document.getElementById('successOverlay').setAttribute('aria-hidden', 'true')
+        };
+    </script>
+
+    <script>
+    (function () {
+      function getMetaOrderData() {
+        var selected = document.querySelector('input[name="package"]:checked');
+        var quantity = selected ? Number(selected.value || 1) : 1;
+        var unitPrice = selected ? Number(selected.dataset.price || 199000) : 199000;
+        var shipping = selected ? Number(selected.dataset.shipping || 0) : 0;
+        return {
+          content_name: 'Cán chổi inox siêu dày dài 3 mét - ' + quantity + ' bộ',
+          content_type: 'product',
+          content_ids: ['can-choi-inox-dai-3-met-' + quantity],
+          value: unitPrice + shipping,
+          currency: 'VND',
+          num_items: quantity
+        };
+      }
+
+      var orderForm = document.getElementById('orderForm');
+      if (orderForm) {
+        orderForm.addEventListener('submit', function () {
+          var nameEl = document.getElementById('name');
+          var phoneEl = document.getElementById('phone');
+          var addressEl = document.getElementById('address');
+          if (!nameEl || !phoneEl || !addressEl) return;
+          if (!nameEl.value.trim() || !phoneEl.value.trim() || !addressEl.value.trim()) return;
+          var phone = phoneEl.value.trim().replace(/\s+/g, '').replace(/^\+84/, '0');
+          if (!/^(0)(3|5|7|8|9)[0-9]{8}$/.test(phone)) return;
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'InitiateCheckout', getMetaOrderData());
+          }
+        }, true);
+      }
+
+      // Lead is recorded only after the order submission receives a response.
+      window.trackKepgaLead = function () {
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Lead', getMetaOrderData());
+        }
+      };
+    })();
+    </script>
+
+</body>
+
+</html>
