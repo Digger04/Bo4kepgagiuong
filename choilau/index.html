@@ -98,7 +98,7 @@ fbq('track', 'ViewContent', {
   content_name: 'Cán chổi inox siêu dày dài 3 mét',
   content_type: 'product',
   content_ids: ['can-choi-inox-dai-3-met'],
-  value: 170000,
+  value: 150000,
   currency: 'VND'
 });
 </script>
@@ -133,7 +133,7 @@ src="https://www.facebook.com/tr?id=2128053304586450&ev=PageView&noscript=1"
             <div class="deal">
                 <div>
                     <div class="price-label">🔥 GIÁ XẢ KHO</div>
-                    <div class="price">170.000đ</div>
+                    <div class="price">150.000đ</div>
                     <span class="old">1 bộ gồm 1 cán cây + 1 bông lau · Miễn phí ship</span>
                 </div>
                 <div class="deal-right">
@@ -158,22 +158,22 @@ src="https://www.facebook.com/tr?id=2128053304586450&ev=PageView&noscript=1"
 
             <div class="packages" id="packages">
                 <label class="pkg selected">
-                    <input type="radio" name="package" value="1" data-price="170000" data-shipping="0" checked>
+                    <input type="radio" name="package" value="1" data-price="150000" data-shipping="0" checked>
                     <span class="pkg-main"><b>1 Bộ ( 1 cán cây + 1 bông lau )</b><small>Miễn phí vận chuyển</small></span>
-                    <span class="pkg-price">170.000đ<small>FREE SHIP</small></span>
+                    <span class="pkg-price">150.000đ<small>FREE SHIP</small></span>
                 </label>
                 <label class="pkg">
-                    <input type="radio" name="package" value="2" data-price="320000" data-shipping="0">
+                    <input type="radio" name="package" value="2" data-price="280000" data-shipping="0">
                     <span class="pkg-main"><b>2 bộ ( 2 cây lau + 2 bông lau )</b><small>Tiết kiệm 20.000đ · Miễn phí vận chuyển</small></span>
-                    <span class="pkg-price">320.000đ<small>FREE SHIP</small></span>
+                    <span class="pkg-price">280.000đ<small>FREE SHIP</small></span>
                 </label>
             </div>
 
             <div id="orderSummary" style="background:#fff;border-radius:8px;padding:10px;margin-bottom:10px;font-size:12px;line-height:1.55">
                 <b>Đơn hàng:</b> <span id="summaryPackage">1 bộ – 1 cây lau + 1 bông lau</span><br>
-                <span>Tiền hàng: </span><b id="summaryPrice">170.000đ</b> ·
+                <span>Tiền hàng: </span><b id="summaryPrice">150.000đ</b> ·
                 <span>Phí ship: </span><b id="summaryShip">0đ</b><br>
-                <span>Tổng thanh toán: </span><b id="summaryTotal" style="color:#ff3154;font-size:16px">170.000đ</b>
+                <span>Tổng thanh toán: </span><b id="summaryTotal" style="color:#ff3154;font-size:16px">150.000đ</b>
             </div>
 
             <form id="orderForm">
@@ -214,7 +214,7 @@ src="https://www.facebook.com/tr?id=2128053304586450&ev=PageView&noscript=1"
                     <li>Chiều dài tối đa 3 mét; có thể rút ngắn hoặc kéo dài tùy nhu cầu.</li>
                     <li>Ứng dụng: lau tường nhà, trần nhà, lau xe ô tô và lau dọn đa năng.</li>
                     <li>Hỗ trợ nhận hàng kiểm tra trước khi thanh toán.</li>
-                    <li>Giá 1 bộ 170.000đ, 2 bộ 320.000đ; miễn phí vận chuyển.</li>
+                    <li>Giá 1 bộ 150.000đ, 2 bộ 280.000đ; miễn phí vận chuyển.</li>
                 </ul>
             </div>
         </section>
@@ -274,14 +274,14 @@ src="https://www.facebook.com/tr?id=2128053304586450&ev=PageView&noscript=1"
             </section>
 
         <section class="final">
-            <h2>🔥 GIÁ ƯU ĐÃI TỪ 170.000đ / BỘ</h2>
-            <p>1 bộ 170K · 2 bộ chỉ 320K · <b>Miễn phí vận chuyển</b></p>
+            <h2>🔥 GIÁ ƯU ĐÃI TỪ 150.000đ / BỘ</h2>
+            <p>1 bộ 150K · 2 bộ chỉ 280K · <b>Miễn phí vận chuyển</b></p>
             <a href="#dat-hang">🛒 ĐẶT MUA NGAY</a>
         </section>
     </div>
 
     <div class="bottom">
-        <a href="#dat-hang" class="price-mini">Từ 170K/bộ</a>
+        <a href="#dat-hang" class="price-mini">Từ 150K/bộ</a>
         <a href="#dat-hang" class="buy-mini">🛒 ĐẶT HÀNG NGAY</a>
     </div>
 
@@ -513,7 +513,7 @@ src="https://www.facebook.com/tr?id=2128053304586450&ev=PageView&noscript=1"
       function getMetaOrderData() {
         var selected = document.querySelector('input[name="package"]:checked');
         var quantity = selected ? Number(selected.value || 1) : 1;
-        var unitPrice = selected ? Number(selected.dataset.price || 170000) : 170000;
+        var unitPrice = selected ? Number(selected.dataset.price || 150000) : 150000;
         var shipping = selected ? Number(selected.dataset.shipping || 0) : 0;
         return {
           content_name: 'Cán chổi inox siêu dày dài 3 mét - ' + quantity + ' bộ',
